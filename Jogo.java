@@ -1,10 +1,17 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
+import javax.swing.JOptionPane;
 
 public class Jogo extends javax.swing.JFrame {
 
     ArrayList <String> memoria = new ArrayList <String>();
+    int click = 0; //contagens de clicks, que tem que ser de 2 em 2
+    String times2em2[];
+    javax.swing.JButton botoes2em2[];
+    int acertos = 0;
+    
+    
     public Jogo() {
         initComponents();
         //Adicionar os times na estrutura de dasos Array list
@@ -27,6 +34,10 @@ public class Jogo extends javax.swing.JFrame {
         
         //Embaralhando a lista
         Collections.shuffle(memoria);
+        
+        //criando os vetores com 2 posiçoes
+        times2em2 = new String [2];
+        botoes2em2 = new javax.swing.JButton[2];
         
     }
 
@@ -178,6 +189,11 @@ public class Jogo extends javax.swing.JFrame {
                 jButton16MouseClicked(evt);
             }
         });
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -262,78 +278,203 @@ public class Jogo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MouseClicked
-        // TODO add your handling code here:
         jButton7.setText(memoria.get(0));
+        times2em2[click] = memoria.get(0);
+        botoes2em2[click] = jButton7;
+        this.click++;
+        
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        
+        }
     }//GEN-LAST:event_jButton7MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
+        
          jButton1.setText(memoria.get(1));
+         times2em2[click] = memoria.get(1);
+         botoes2em2[click] = jButton1;
+         this.click++;
+         
+         if(click == 2){
+        verifica(times2em2, botoes2em2);
+         }
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
-         jButton2.setText(memoria.get(2));
+        jButton2.setText(memoria.get(2));
+        times2em2[click] = memoria.get(2);
+        botoes2em2[click] = jButton2;
+        this.click++;
+        
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
+        
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         jButton3.setText(memoria.get(3));
+        times2em2[click] = memoria.get(3);
+        botoes2em2[click] = jButton3;
+        this.click++;
+        
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-         jButton4.setText(memoria.get(4));
+        jButton4.setText(memoria.get(4));
+        times2em2[click] = memoria.get(4);
+        botoes2em2[click] = jButton4;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
+         
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         jButton5.setText(memoria.get(5));
+        times2em2[click] = memoria.get(5);
+        botoes2em2[click] = jButton5;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
+       
     }//GEN-LAST:event_jButton5MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-     jButton6.setText(memoria.get(6));
+    jButton6.setText(memoria.get(6));
+    times2em2[click] = memoria.get(6);
+        botoes2em2[click] = jButton6;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton16MouseClicked
-       jButton16.setText(memoria.get(7));
+       jButton16.setText(memoria.get(15));
+       times2em2[click] = memoria.get(15);
+       botoes2em2[click] = jButton16;
+       this.click++;
+       if(click == 2){
+        verifica(times2em2, botoes2em2);
+       }
     }//GEN-LAST:event_jButton16MouseClicked
 
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
-         jButton8.setText(memoria.get(8));
+        jButton8.setText(memoria.get(8));
+        times2em2[click] = memoria.get(8);
+        botoes2em2[click] = jButton8;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton8MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
-         jButton9.setText(memoria.get(9));
+        jButton9.setText(memoria.get(9));
+        times2em2[click] = memoria.get(9);
+        botoes2em2[click] = jButton9;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton9MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
-         jButton10.setText(memoria.get(10));
+        jButton10.setText(memoria.get(10));
+        times2em2[click] = memoria.get(10);
+        botoes2em2[click] = jButton10;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
         jButton11.setText(memoria.get(11));
+        times2em2[click] = memoria.get(11);
+        botoes2em2[click] = jButton11;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
         jButton12.setText(memoria.get(12));
+        times2em2[click] = memoria.get(12);
+        botoes2em2[click] = jButton12;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton13MouseClicked
         jButton13.setText(memoria.get(13));
+        times2em2[click] = memoria.get(13);
+        botoes2em2[click] = jButton13;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton13MouseClicked
 
     private void jButton14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton14MouseClicked
         jButton14.setText(memoria.get(14));
+        times2em2[click] = memoria.get(14);
+        botoes2em2[click] = jButton14;
+        this.click++;
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton14MouseClicked
 
     private void jButton15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton15MouseClicked
        jButton15.setText(memoria.get(15));
+       times2em2[click] = memoria.get(15);
+        botoes2em2[click] = jButton15;
+        this.click++;
+        
+        if(click == 2){
+        verifica(times2em2, botoes2em2);
+        }
     }//GEN-LAST:event_jButton15MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+   
+    public void verifica(String times[] , javax.swing.JButton botoes[]){
+        if(times[0].equals(times[1])){
+            JOptionPane.showMessageDialog(null, "Voce acertou !!!");
+            this.acertos++;
+            //Condiçoes para finalizar o jogo
+            if(acertos==8){
+                JOptionPane.showMessageDialog(null, "Parabéns\nVoce chegouao fim do jogo");
+                System.exit(0);
+            }
+            botoes[0].setEnabled(false);
+            botoes[1].setEnabled(false);
+        }else{
+            JOptionPane.showMessageDialog(null, "Voce errou", "ERRO", JOptionPane.ERROR_MESSAGE);
+            botoes[0].setText("?");
+            botoes[1].setText("?");
+        }
+       this.click = 0; 
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
